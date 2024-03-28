@@ -1,16 +1,17 @@
 import time
-from PIL import ImageGrab
 import cv2 as cv
 import numpy as np
 from typing import Tuple, List
 import pyautogui
 
 Position = Tuple[int, int]
+MAIN_COLOR = 198
+DELAY = 2
 
 
 def task2(image: np.ndarray) -> Tuple[Position, Position]:
-    mask = cv.inRange(image, np.array([198, 198, 198]),
-                      np.array([198, 198, 198]))
+    mask = cv.inRange(image, np.array([MAIN_COLOR, MAIN_COLOR, MAIN_COLOR]),
+                      np.array([MAIN_COLOR, MAIN_COLOR, MAIN_COLOR]))
     grayscale_image = cv.cvtColor(cv.bitwise_and(image, image, mask=mask),
                                   cv.COLOR_BGR2GRAY)
     contours, hierarchy = cv.findContours(grayscale_image, cv.RETR_TREE, 2)
@@ -24,8 +25,8 @@ def task1(image: np.ndarray, minefield: Tuple[Position, Position]) \
         -> Tuple[np.ndarray, np.ndarray]:
     image = image[minefield[0][1]:minefield[1][1],
                   minefield[0][0]:minefield[1][0]]
-    mask = cv.inRange(image, np.array([198, 198, 198]),
-                      np.array([198, 198, 198]))
+    mask = cv.inRange(image, np.array([MAIN_COLOR, MAIN_COLOR, MAIN_COLOR]),
+                      np.array([MAIN_COLOR, MAIN_COLOR, MAIN_COLOR]))
     grayscale_image = cv.cvtColor(cv.bitwise_and(image, image, mask=mask),
                                   cv.COLOR_BGR2GRAY)
 
@@ -317,6 +318,7 @@ while True:
         total += number_of_clicks
         if total == tile_count:
             break
+        time.sleep(DELAY)
     except (IndexError, ValueError):
-        print("Nieco je zle.")
+        print("Something is wrong.")
         time.sleep(2)
