@@ -12,7 +12,7 @@ widnows.
 Use this bot at your own risk. The website can actually detect when you are using it with very small delays. When this happens, your IP address will get
 permanently banned from playing.
 
-## TROUUBLESHOOTING:
+## TROUBLESHOOTING:
 
 If the program prints that something is wrong, try to play with different zoom and birghtness settings. If even this doesn't help, you can try to replace the MAIN_COLOR constant with the main shade of grey your minefield has (the biggest uniform areas of the frame are of this color). You can find it out by pasting screenshot into https://imagecolorpicker.com/, and you will get the RGB code of that color, then try to play with different zoom values.
 
