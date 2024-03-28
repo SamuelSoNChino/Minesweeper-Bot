@@ -6,7 +6,7 @@ import pyautogui
 
 Position = Tuple[int, int]
 MAIN_COLOR = 198
-DELAY = 2
+DELAY = 0.5
 
 
 def task2(image: np.ndarray) -> Tuple[Position, Position]:
@@ -288,13 +288,16 @@ def final(helper: List[str],
                 random_click = False
                 pyautogui.click(x + tile_size // 2, y + tile_size // 2)
                 number_of_clicks += 1
+                time.sleep(DELAY)
             elif index == 2:
                 pyautogui.click(x + tile_size // 2, y + tile_size // 2)
                 number_of_clicks += 1
+                time.sleep(DELAY)
             elif index == 3:
                 pyautogui.click(x + tile_size // 2, y +
                                 tile_size // 2, button="right")
                 number_of_clicks += 1
+                time.sleep(DELAY)
             x_tile += 1
         x_tile = 0
         y_tile += 1
@@ -318,7 +321,6 @@ while True:
         total += number_of_clicks
         if total == tile_count:
             break
-        time.sleep(DELAY)
     except (IndexError, ValueError):
         print("Something is wrong.")
         time.sleep(2)
