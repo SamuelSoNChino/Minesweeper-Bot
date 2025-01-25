@@ -1,6 +1,9 @@
 # Minesweeper Bot
 
 The Minesweeper Bot is a Python program that automates the gameplay on the [Minesweeper Online](https://minesweeper.online/) website. By utilizing visual detection and automation, the bot analyzes the game board and simulates mouse interactions to solve the puzzle.
+
+The app shares most of the logic with https://github.com/SamuelSoNChino/Minesweeper-Hint/
+
 ### Features
 
 - **Automated Gameplay**: The bot identifies safe tiles and mines and interacts with the board accordingly.
@@ -89,7 +92,7 @@ The bot relies on the following steps:
         
         - Ignores tiles marked as unknown.
 
-5. Reiteration:
+5. **Reiteration**:
     - The process repeats until the game is solved or fails due to a random guess.
 
 ## Customization
