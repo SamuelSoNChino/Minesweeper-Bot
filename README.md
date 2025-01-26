@@ -4,6 +4,8 @@ The Minesweeper Bot is a Python program that automates the gameplay on the [Mine
 
 The app shares most of the logic with https://github.com/SamuelSoNChino/Minesweeper-Hint/
 
+> This was one of my earlier projects, so there are parts I would refactor. I might look into it in the future.
+
 ### Features
 
 - **Automated Gameplay**: The bot identifies safe tiles and mines and interacts with the board accordingly.
